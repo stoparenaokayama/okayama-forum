@@ -70,9 +70,24 @@ document.querySelectorAll('nav a').forEach(function(link){
 <section class="hero">
   <h2>岡山共創市民フォーラム －岡山に民主主義を取り戻す－</h2>
   <p>市民とともに岡山市の未来を考え、希望ある街を目指します。</p>
-  <a href="about.html" style="margin-top:1rem; display:inline-block; background:#1976d2; color:white; padding:0.6rem 1.2rem; border-radius:5px; text-decoration:none;">About Us</a>
+  <a href="./about.html" class="hero-button">About Us</a>
 </section>
 
+<style>
+.hero-button {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #1976d2;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.hero-button:hover {
+  background: #1565c0;
+}
+</style>
 <section>
   <h3>私たちの主張</h3>
   <div class="features">
