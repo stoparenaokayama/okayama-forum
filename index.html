@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岡山共創市民フォーラム</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+header { background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 3px solid #1976d2; }
+header h1 { color: #1976d2; font-size: 1.8rem; font-weight: bold; }
+nav a { text-decoration: none; color: #333; margin-left: 1.5rem; font-weight: 500; }
+nav a:hover { color: #1976d2; }
+.hero { background-image: url('images/korakuen.jpg'); background-size: cover; background-position: center; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; padding: 0 1rem; position: relative; }
+.hero::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); } /* 視認性向上 */
+.hero h2, .hero p { position: relative; z-index: 1; }
+.hero h2 { font-size: 2.2rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); max-width: 700px; }
+section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
+h3 { color: #1976d2; margin-bottom: 1rem; }
+.features { display: flex; flex-wrap: wrap; gap: 1rem; }
+.feature { background: #ffffff; flex: 1; min-width: 250px; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-align: center; transition: transform 0.2s; }
+.feature:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+.feature h4 { margin-bottom: 0.7rem; color: #1976d2; }
+.feature p { font-size: 1rem; }
+.news-item { background: #ffecb3; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: bold; }
+footer { background: #333; color: #fff; text-align: center; padding: 1.5rem 2rem; margin-top: 2rem; font-size: 0.9rem; }
+footer a { color: #fff; text-decoration: underline; }
+@media (max-width: 768px) { .features { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>岡山共創市民フォーラム</h1>
+</header>
+
+<body>
+<header>
+  <h1>岡山市の未来を考える会</h1>
+  <nav>
+    <a href="#">ホーム</a>
+    <a href="#">主義主張</a>
+    <a href="#">活動予定</a>
+    <a href="#">寄附・支援</a>
+    <a href="#">お問い合わせ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>岡山共創市民フォーラム －岡山に民主主義を取り戻す－</h2>
+  <p>
+    私たちは岡山市の現状に憂い、変革を志す市民有志による団体です。税の無駄遣いや既存構造による停滞、若者の流出などの課題に向き合い、神﨑政人氏の政策理念に共感し活動しています。岡山に民主主義を取り戻し、希望ある街を目指します。
+  </p>
+</section>
+
+<section>
+  <h3>私たちの主張</h3>
+  <div class="features">
+    <div class="feature">
+      <h4>アリーナ公設計画の白紙撤回</h4>
+      <p>採算不透明な計画への巨額税投入をやめ、本当に必要な事業への投資を求めます。</p>
+    </div>
+    <div class="feature">
+      <h4>外部投資の促進</h4>
+      <p>次世代高速通信網など、先進インフラへの積極投資で地元経済の活性化を求めます。</p>
+    </div>
+    <div class="feature">
+      <h4>岡山市と岡山県の関係強化</h4>
+      <p>地域全体の発展を目指し、県市連携を強化。持続可能で開かれた行政の実現を求めます。</p>
+    </div>
+    <div class="feature">
+      <h4>デジタル化による経済発展</h4>
+      <p>デジタル技術を活用し、地元企業や若者の活躍を支援する経済環境の整備を求めます。</p>
+    </div>
+    <div class="feature">
+      <h4>市民が求める課題への真摯な対応</h4>
+      <p>市民の声を政策に反映し、透明で責任ある行政運営を推進を求めます。</p>
+    </div>
+  </div>
+</section>
+<!-- 推薦候補者バナー -->
+<section style="padding:2rem; max-width:1000px; margin:auto; text-align:center;">
+  <h3>推薦候補者の情報</h3>
+  <p>当会は神﨑政人氏の政策に共感し、情報提供として公式HPをご案内します。</p>
+  <a href="https://www.kanzaki-okayama.org/" target="_blank" class="candidate-banner">
+    神﨑政人氏 公式HP
+    <span class="external-icon">&#x2197;</span>
+  </a>
+  <p class="banner-note">※リンクは情報提供のみを目的としています。投票の呼びかけではありません。</p>
+</section>
+
+<section>
+  <h3>最新のお知らせ</h3>
+  <div class="news-item">
+    <strong>8月15日：</strong>HPを公開しました
+  </div>
+</section>
+<section>
+  <h3>規約</h3>
+  <a href="rules.html">岡山共創市民フォーラム　規約</a>
+</section>
+
+<footer>
+  <div id="issuer-info">
+    <p style="margin:0.3em 0;"><strong>発行主体</strong>：岡山共創市民フォーラム</p>
+    <p style="margin:0.3em 0;"><strong>代表者</strong>：上杉恭平</p>
+    <p style="margin:0.3em 0;"><strong>連絡先</strong>：
+      <a href="mailto:stoparenaokayama@gmail.com" style="color:#336699; text-decoration:none;">
+        stoparenaokayama@gmail.com
+      </a>
+    </p>
+  </div>
+  <p style="margin-top:0.8em;"><strong>最終更新日</strong>：
+    <span id="last-updated"></span>
+  </p>
+  <script>
+    // 公示日：2025年9月21日で住所表示切替
+    (function() {
+      const noticeDate = new Date(2025,8,21);
+      const today = new Date();
+      if(today >= noticeDate){
+        document.getElementById("issuer-info").innerHTML = `
+          <p style="margin:0.3em 0;"><strong>発行主体</strong>：岡山共創市民フォーラム</p>
+          <p style="margin:0.3em 0;"><strong>代表者</strong>：上杉恭平</p>
+          <p style="margin:0.3em 0;"><strong>住所</strong>：岡山市北区一宮495-1</p>
+          <p style="margin:0.3em 0;"><strong>連絡先</strong>：
+            <a href="mailto:stoparenaokayama@gmail.com" style="color:#336699; text-decoration:none;">
+              stoparenaokayama@gmail.com
+            </a>
+          </p>
+        `;
+      }
+    })();
+
+    // 最終更新日表示
+    const lastUpdated = new Date(document.lastModified);
+    const yyyy = lastUpdated.getFullYear();
+    const mm = String(lastUpdated.getMonth() + 1).padStart(2,'0');
+    const dd = String(lastUpdated.getDate()).padStart(2,'0');
+    document.getElementById('last-updated').textContent = `${yyyy}年${mm}月${dd}日`;
+  </script>
+  <p>&copy; 2025 岡山共創市民フォーラム</p>
+</footer>
+
+</body>
+</html>
