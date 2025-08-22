@@ -33,7 +33,39 @@ footer a { color: #fff; text-decoration: underline; }
 
 <header>
   <h1>岡山共創市民フォーラム</h1>
+  <nav>
+    <a href="index.html" class="nav-link">ホーム</a>
+    <a href="about.html" class="nav-link">私たちについて</a>
+    <a href="greeting.html" class="nav-link">代表あいさつ</a>
+  </nav>
 </header>
+
+<style>
+nav a {
+  text-decoration: none;
+  color: #333; /* 通常リンク色 */
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #1976d2; /* ホバー時にやや強調 */
+}
+/* 現在表示中のページに適用するクラス */
+.nav-current {
+  color: #1976d2; /* 現在ページのリンク色を少し強調 */
+  font-weight: bold;
+}
+</style>
+
+<script>
+// 現在のページURLに応じてナビリンクに .nav-current を追加
+document.querySelectorAll('nav a').forEach(function(link){
+  if (link.href === window.location.href) {
+    link.classList.add('nav-current');
+  }
+});
+</script>
 
 <section class="hero">
   <h2>岡山共創市民フォーラム －岡山に民主主義を取り戻す－</h2>
