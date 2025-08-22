@@ -27,6 +27,31 @@ h3 { color: #1976d2; margin-bottom: 1rem; }
 footer { background: #333; color: #fff; text-align: center; padding: 1.5rem 2rem; margin-top: 2rem; font-size: 0.9rem; }
 footer a { color: #fff; text-decoration: underline; }
 @media (max-width: 768px) { .features { flex-direction: column; } }
+
+/* 推薦候補者バナー */
+.candidate-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #1976d2;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.candidate-banner:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+}
+.external-icon { font-size: 1.1rem; }
+.banner-note { margin-top:0.5rem; font-size:0.8rem; color:#555; }
+@media (max-width:768px){
+  .candidate-banner { display:block; width:100%; padding:1rem 0; box-sizing:border-box; }
+}
+  
 </style>
 </head>
 <body>
