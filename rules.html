@@ -1,6 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岡山創生フォーラム</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+header { background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 3px solid #1976d2; }
+header h1 { color: #1976d2; font-size: 1.8rem; font-weight: bold; }
+nav a { text-decoration: none; color: #333; margin-left: 1.5rem; font-weight: 500; }
+nav a:hover { color: #1976d2; }
+.hero { background-image: url('images/korakuen.jpg'); background-size: cover; background-position: center; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; padding: 0 1rem; position: relative; }
+.hero::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); } /* 視認性向上 */
+.hero h2, .hero p { position: relative; z-index: 1; }
+.hero h2 { font-size: 2.2rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); max-width: 700px; }
+section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
+h3 { color: #1976d2; margin-bottom: 1rem; }
+.features { display: flex; flex-wrap: wrap; gap: 1rem; }
+.feature { background: #ffffff; flex: 1; min-width: 250px; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-align: center; transition: transform 0.2s; }
+.feature:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+.feature h4 { margin-bottom: 0.7rem; color: #1976d2; }
+.feature p { font-size: 1rem; }
+.news-item { background: #ffecb3; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: bold; }
+footer { background: #333; color: #fff; text-align: center; padding: 1.5rem 2rem; margin-top: 2rem; font-size: 0.9rem; }
+footer a { color: #fff; text-decoration: underline; }
+@media (max-width: 768px) { .features { flex-direction: column; } }
+
+
+  
+/* 推薦候補者バナー */
+.candidate-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #1976d2;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.candidate-banner:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+}
+.external-icon { font-size: 1.1rem; }
+.banner-note { margin-top:0.5rem; font-size:0.8rem; color:#555; }
+@media (max-width:768px){
+  .candidate-banner { display:block; width:100%; padding:1rem 0; box-sizing:border-box; }
+}
+  
+</style>
+</head>
+<body>
+
+<header>
+  <h1>岡山創生フォーラム</h1>
+  <nav>
+    <a href="index.html" class="nav-link">ホーム</a>
+    <a href="about.html" class="nav-link">私たちについて</a>
+    <a href="greeting.html" class="nav-link">代表あいさつ</a>
+    <a href="rules.html" class="nav-link">団体規約</a>
+  </nav>
+</header>
+
+<style>
+nav a {
+  text-decoration: none;
+  color: #333; /* 通常リンク色 */
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #1976d2; /* ホバー時にやや強調 */
+}
+/* 現在表示中のページに適用するクラス */
+.nav-current {
+  color: #1976d2; /* 現在ページのリンク色を少し強調 */
+  font-weight: bold;
+}
+</style>
+
+<script>
+// 現在のページURLに応じてナビリンクに .nav-current を追加
+document.querySelectorAll('nav a').forEach(function(link){
+  if (link.href === window.location.href) {
+    link.classList.add('nav-current');
+  }
+});
+</script>
+
+<head>
   <meta charset="UTF-8">
   <title>岡山創生フォーラム - 規約</title>
   <style>
@@ -10,6 +105,14 @@
   </style>
 </head>
 <body>
+
+
+  <p>
+    岡山創生フォーラムは、岡山市の未来を真剣に考える市民有志によって設立された団体です。<br>
+    私たちは、税の無駄遣いや閉鎖的な行政体質に疑問を持ち、健全で透明性の高い市政を実現することを目指します。<br>
+    また、神﨑政人氏の掲げる政策理念に共感し、その実現を市民の立場から後押ししていきます。
+  </p>
+
   <h1>岡山創生フォーラム 規約</h1>
 
   <h2>第1条（名称）</h2>
@@ -60,4 +163,5 @@
 </section>
   
 </html>
+
 
