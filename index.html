@@ -1,108 +1,196 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>岡山創生フォーラム</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
-header { background-color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 3px solid #1976d2; }
-header h1 { color: #1976d2; font-size: 1.8rem; font-weight: bold; }
-nav a { text-decoration: none; color: #333; margin-left: 1.5rem; font-weight: 500; }
-nav a:hover { color: #1976d2; }
-.hero { background-image: url('images/korakuen.jpg'); background-size: cover; background-position: center; height: 450px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; flex-direction: column; padding: 0 1rem; position: relative; }
-.hero::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); } /* 視認性向上 */
-.hero h2, .hero p { position: relative; z-index: 1; }
-.hero h2 { font-size: 2.2rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); margin-bottom: 1rem; }
-.hero p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); max-width: 700px; }
-section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
-h3 { color: #1976d2; margin-bottom: 1rem; }
-.features { display: flex; flex-wrap: wrap; gap: 1rem; }
-.feature { background: #ffffff; flex: 1; min-width: 250px; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-align: center; transition: transform 0.2s; }
-.feature:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
-.feature h4 { margin-bottom: 0.7rem; color: #1976d2; }
-.feature p { font-size: 1rem; }
-.news-item { background: #ffecb3; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: bold; }
-footer { background: #333; color: #fff; text-align: center; padding: 1.5rem 2rem; margin-top: 2rem; font-size: 0.9rem; }
-footer a { color: #fff; text-decoration: underline; }
-@media (max-width: 768px) { .features { flex-direction: column; } }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>岡山創生フォーラム</title>
+  <style>
+    /* ======== Reset ======== */
+    body, h1, h2, h3, p, ul {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
 
+    /* ======== Header ======== */
+    header {
+      background-color: #1976d2;
+      color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  
-/* 推薦候補者バナー */
-.candidate-banner {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #1976d2;
-  color: #fff;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.3s, transform 0.3s;
-}
-.candidate-banner:hover {
-  background-color: #1565c0;
-  transform: translateY(-2px);
-}
-.external-icon { font-size: 1.1rem; }
-.banner-note { margin-top:0.5rem; font-size:0.8rem; color:#555; }
-@media (max-width:768px){
-  .candidate-banner { display:block; width:100%; padding:1rem 0; box-sizing:border-box; }
-}
-  
-</style>
+    /* ======== Hero ======== */
+    .hero {
+      background: url('images/okayama.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero h2, .hero p, .hero a {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== Buttons ======== */
+    .btn-primary {
+      display: inline-block;
+      background-color: #1976d2;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    /* ======== Features ======== */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .feature {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .feature h3 {
+      color: #1976d2;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ======== News ======== */
+    .news {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .news h2 {
+      color: #1976d2;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .news-item {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #1976d2;
+      border-radius: 4px;
+    }
+    .news-item time {
+      font-weight: bold;
+      color: #555;
+    }
+
+    /* ======== Footer ======== */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    footer address {
+      font-style: normal;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    footer small {
+      display: block;
+      margin-top: 1rem;
+      color: #777;
+    }
+
+    /* ======== Responsive ======== */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.3rem 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>岡山創生フォーラム</h1>
-  <nav>
-    <a href="index.html" class="nav-link">ホーム</a>
-    <a href="about.html" class="nav-link">私たちについて</a>
-    <a href="greeting.html" class="nav-link">代表あいさつ</a>
-    <a href="rules.html" class="nav-link">団体規約</a>
-  </nav>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>岡山創生フォーラム</h1>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="about.html">私たちについて</a>
+      <a href="greeting.html">代表あいさつ</a>
+      <a href="rules.html">規約</a>
+    </nav>
+  </header>
 
-<style>
-nav a {
-  text-decoration: none;
-  color: #333; /* 通常リンク色 */
-  margin-left: 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #1976d2; /* ホバー時にやや強調 */
-}
-/* 現在表示中のページに適用するクラス */
-.nav-current {
-  color: #1976d2; /* 現在ページのリンク色を少し強調 */
-  font-weight: bold;
-}
-</style>
-
-<script>
-// 現在のページURLに応じてナビリンクに .nav-current を追加
-document.querySelectorAll('nav a').forEach(function(link){
-  if (link.href === window.location.href) {
-    link.classList.add('nav-current');
-  }
-});
-</script>
-
-<section class="hero">
-  <h2>岡山創生フォーラム －岡山に民主主義を取り戻す－</h2>
-  <p>市民とともに岡山市の未来を考え、希望ある街を目指します。</p>
-</section>
-
+  <!-- Hero -->
+  <section class="hero">
+    <h2>岡山創生フォーラム － 岡山に新しい未来を －</h2>
+    <p>市民とともに岡山市の未来を考え、希望ある街を目指します。</p>
+    <a href="about.html" class="btn-primary">About Us</a>
+  </section>
 
 <section>
-  <h3>私たちの主張</h3>
+  <h3 style="text-align:center; color:#1976d2; margin-top:2rem;">私たちの主張</h3>
   <div class="features">
     <div class="feature">
       <h4>アリーナ公設計画の白紙撤回</h4>
@@ -123,18 +211,27 @@ document.querySelectorAll('nav a').forEach(function(link){
   </div>
 </section>
 
-<!-- 推薦候補者バナー -->
-<section style="padding:2rem; max-width:1000px; margin:auto; text-align:center;">
-  <h3>推薦候補者の情報</h3>
-  <p>当会は神﨑政人氏の政策に共感し、情報提供として公式HPをご案内します。</p>
-  <a href="https://www.kanzaki-okayama.org/" target="_blank" 
-     style="display:inline-block; background-color:#1976d2; color:#fff; text-decoration:none; padding:1rem 2rem; border-radius:6px; font-weight:500; transition:0.3s;">
-    神﨑政人氏 公式HP
-  </a>
-  <p style="margin-top:0.5rem; font-size:0.8rem; color:#555;">
-    ※リンクは情報提供のみを目的としています。投票の呼びかけではありません。
+<!-- 応援団体としての明記 + 推薦候補者バナー（強調版） -->
+<section style="padding:3rem 1rem; background:linear-gradient(135deg,#1976d2,#42a5f5); color:#fff; text-align:center; margin-top:2rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+  <h2 style="font-size:2rem; font-weight:700; margin-bottom:1rem;">私たちは神﨑政人氏を応援します</h2>
+  <p style="font-size:1.1rem; max-width:800px; margin:auto; line-height:1.6; margin-bottom:2rem;">
+    岡山創生フォーラムは、<strong>神﨑政人氏の活動と理念を支持し、共に歩む市民団体</strong>です。<br>
+    確認団体として、市民の皆さまへ関連情報を発信してまいります。
   </p>
+
+  <div style="margin-top:2rem;">
+    <h3 style="font-size:1.5rem; font-weight:600; margin-bottom:1rem;">推薦候補者の情報</h3>
+    <p style="margin-bottom:1.5rem;">神﨑政人氏の政策・活動内容は、以下の公式HPをご参照ください。</p>
+    <a href="https://www.kanzaki-okayama.org/" target="_blank" 
+       style="display:inline-block; background-color:#fff; color:#1976d2; text-decoration:none; padding:1.2rem 2.5rem; border-radius:8px; font-weight:600; font-size:1.1rem; box-shadow:0 3px 6px rgba(0,0,0,0.2); transition:0.3s;">
+      👉 神﨑政人氏 公式HPはこちら
+    </a>
+    <p style="margin-top:1rem; font-size:0.85rem; color:#e3f2fd;">
+      ※当会からの情報提供です。投票の呼びかけではありません。
+    </p>
+  </div>
 </section>
+
 
 <!-- アリーナ署名バナー -->
 <section style="padding:2rem; max-width:1000px; margin:auto; text-align:center;">
