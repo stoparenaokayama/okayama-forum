@@ -276,8 +276,43 @@ document.querySelectorAll('nav a').forEach(function(link){
   <!-- トップページへのリンク -->
   <p><a href="index.html">トップページに戻る</a></p>
 </section>
-  
+
+
+
+
+  <footer>
+    <div id="issuer-info">
+      <p><strong>発行主体</strong>：岡山創生フォーラム</p>
+      <p><strong>代表者</strong>：上杉恭平</p>
+      <p><strong>住所</strong>：岡山市北区田町1丁目1-1　チサンマンション岡山3F 309号</p>
+      <p><strong>連絡先</strong>：
+        <a href="mailto:stoparenaokayama@gmail.com" style="color:#66aaff; text-decoration:none;">
+          stoparenaokayama@gmail.com
+        </a>
+      </p>
+    </div>
+    <p style="margin-top:0.8em;"><strong>最終更新日</strong>：
+      <span id="last-updated"></span>
+    </p>
+    <p>&copy; 2025 岡山創生フォーラム</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // 最終更新日表示
+    const lastUpdated = new Date(document.lastModified);
+    const yyyy = lastUpdated.getFullYear();
+    const mm = String(lastUpdated.getMonth() + 1).padStart(2,'0');
+    const dd = String(lastUpdated.getDate()).padStart(2,'0');
+    document.getElementById('last-updated').textContent = `${yyyy}年${mm}月${dd}日`;
+  </script>
+</body>
 </html>
+</html>
+
 
 
 
