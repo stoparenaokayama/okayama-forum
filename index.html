@@ -4,177 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>岡山創生フォーラム</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
   <style>
-    /* ======== Reset ======== */
-    body, h1, h2, h3, p, ul {
-      margin: 0;
-      padding: 0;
-    }
     body {
-      font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       line-height: 1.6;
+      background: #fafafa;
       color: #333;
-      background-color: #f9f9f9;
+      margin: 0;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Noto Serif JP', serif;
     }
 
-    /* ======== Header ======== */
+    /* ===== ヘッダー ===== */
     header {
-      background-color: #1976d2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1976d2;
       color: #fff;
-      padding: 1rem;
+      padding: 0.8rem 1rem;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     header h1 {
-      font-size: 1.5rem;
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin-right: 1rem;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      font-size: 1.4rem;
+      font-weight: 900;
     }
 
-    /* ======== Hero ======== */
+    nav { display: none; flex-direction: column; background: #1565c0; position: absolute; top: 60px; right: 0; width: 220px; }
+    nav.show { display: flex; }
+    nav a { color: #fff; padding: 1rem; text-decoration: none; font-weight: 500; }
+    nav a:hover { background: #0d47a1; }
+
+    .menu-btn { cursor: pointer; font-size: 1.8rem; border: none; background: none; color: white; }
+    @media (min-width: 768px) {
+      nav { display: flex !important; position: static; flex-direction: row; background: none; width: auto; }
+      nav a { padding: 0 1rem; }
+      .menu-btn { display: none; }
+    }
+
+    /* ===== Hero ===== */
     .hero {
       background: url('images/okayama.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 4rem 1rem;
       position: relative;
+      overflow: hidden;
     }
     .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
+      inset: 0;
+      background: rgba(0,0,0,0.55);
     }
-    .hero h2, .hero p, .hero a {
+    .hero h2, .hero p {
       position: relative;
       z-index: 1;
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeSlideIn 1s ease forwards;
     }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      animation: fadeInDown 1s ease;
-    }
-    .hero p {
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-    }
+    .hero h2 { font-size: 2.5rem; font-weight: 900; animation-delay: 0.3s; }
+    .hero p { font-size: 1.2rem; margin-top: 1rem; font-weight: 500; animation-delay: 0.6s; }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
+    @keyframes fadeSlideIn {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ======== Buttons ======== */
-    .btn-primary {
+    /* ===== 推薦候補者バナー ===== */
+    .banner {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoomIn 1s ease forwards;
+      animation-delay: 1s;
+    }
+    .banner h3 {
+      color: #1976d2;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .banner a {
       display: inline-block;
       background-color: #1976d2;
       color: #fff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 6px;
       text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+      animation: pulse 2s infinite;
     }
-    .btn-primary:hover {
-      background-color: #1565c0;
-      transform: translateY(-2px);
+    .banner a:hover {
+      transform: scale(1.05);
     }
-
-    /* ======== Features ======== */
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .feature {
-      flex: 1 1 300px;
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .feature h3 {
-      color: #1976d2;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ======== News ======== */
-    .news {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .news h2 {
-      color: #1976d2;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .news-item {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-left: 5px solid #1976d2;
-      border-radius: 4px;
-    }
-    .news-item time {
-      font-weight: bold;
+    .banner p {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
       color: #555;
     }
 
-    /* ======== Footer ======== */
+    @keyframes fadeZoomIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    /* ===== Footer ===== */
     footer {
       background: #222;
       color: #ccc;
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 2rem;
+      font-size: 0.9rem;
     }
-    footer address {
-      font-style: normal;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    footer small {
-      display: block;
-      margin-top: 1rem;
-      color: #777;
-    }
-
-    /* ======== Responsive ======== */
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      nav a {
-        display: inline-block;
-        margin: 0.3rem 0.5rem;
-      }
-    }
+    footer a { color: #66aaff; text-decoration: none; }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <h1>岡山創生フォーラム</h1>
-    <nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
       <a href="index.html">ホーム</a>
       <a href="about.html">私たちについて</a>
       <a href="greeting.html">代表あいさつ</a>
@@ -186,7 +155,6 @@
   <section class="hero">
     <h2>岡山創生フォーラム － 岡山に新しい未来を －</h2>
     <p>市民とともに岡山市の未来を考え、希望ある街を目指します。</p>
-    <a href="about.html" class="btn-primary">About Us</a>
   </section>
 
 <!-- 応援団体としての明記 + 推薦候補者バナー（強調版） -->
