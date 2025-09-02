@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>岡山創生フォーラム | テーマページ</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #333;
+      margin: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    /* ===== ヘッダー ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1976d2;
+      color: #fff;
+      padding: 0.8rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background: #1565c0;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 220px;
+    }
+    nav.show { display: flex; }
+    nav a {
+      color: #fff;
+      padding: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { background: #0d47a1; }
+    .menu-btn {
+      cursor: pointer;
+      font-size: 1.8rem;
+      border: none;
+      background: none;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+      }
+      nav a { padding: 0 1rem; }
+      .menu-btn { display: none; }
+    }
+
+    /* ===== Hero（ページごとに見出し変える） ===== */
+    .hero {
+      background: url('images/okayama.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 { font-size: 2.2rem; font-weight: 900; }
+    .hero p { font-size: 1.1rem; margin-top: 0.8rem; }
+
+    /* ===== コンテンツ ===== */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .section h3 {
+      color: #1976d2;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+    }
+
+    /* ===== 政策リンク誘導 ===== */
+    .policy-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .policy-link a {
+      display: inline-block;
+      background: #1976d2;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .policy-link a:hover {
+      background: #0d47a1;
+    }
+
+    /* ===== フッター ===== */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #66aaff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>岡山創生フォーラム</h1>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">私たちについて</a>
+      <a href="greeting.html">代表あいさつ</a>
+      <a href="rules.html">規約</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>「岡山市長、誰でも一緒だって思ってない？」</h2>
+    <p>市民が抱く疑問を整理し、未来を考えます。</p>
+  </section>
+
+  <!-- Main Content -->
+   <main>
+    <!-- 市民の疑問 -->
+    <div class="section">
+      <h3>市民の疑問</h3>
+      <p>「市長が誰になっても同じではないか？」</p>
+      <p>「結局は大型の公共事業ばかりで、私たちの暮らしは変わらないのでは？」</p>
+      <p>「市民の声は本当に市政に届いているのだろうか？」</p>
+    </div>
+
+    <!-- 市民が抱える課題 -->
+    <div class="section">
+      <h3>岡山市民が抱える課題</h3>
+      <p>SNSや市民アンケートなどで聞かれる声を整理すると、以下のような課題が見えてきます。</p>
+      <ul>
+        <li>公共事業の優先度が市民生活に直結する分野よりも「ハコモノ」に傾いているとの指摘</li>
+        <li>若者や将来世代に向けた投資や育成支援が十分ではないとの不安</li>
+        <li>行政手続きのデジタル化が進まず、利便性の面で取り残されているとの声</li>
+        <li>県と市の連携不足により、教育・医療・防災などで非効率が生じているとの懸念</li>
+        <li>「市民の幸せ」を測る客観的な指標が乏しく、成果が見えにくいとの問題</li>
+      </ul>
+      <p>これらは「現職批判」ではなく、あくまで <strong>市民が日々感じている課題</strong> です。</p>
+    </div>
+
+    <!-- 私たちの視点（結論） -->
+    <div class="section">
+      <h3>結論：そんなことはない</h3>
+      <p>「誰が市長でも同じ」ではありません。<br>
+      将来世代を重視し、市民の声を反映し、市政を前に進められる人が必要です。</p>
+    </div>
+
+    <!-- 神﨑政人さんに期待すること -->
+    <div class="section">
+      <h3>神﨑政人さんなら実現できること</h3>
+      <ul>
+        <li><strong>ハコモノ優先ではなく、人への投資</strong>  
+          教育・子育て・地域企業への支援を通じ、次世代の力を育みます。</li>
+        <li><strong>デジタル技術の活用</strong>  
+          行政手続きの効率化、市民サービスの利便性向上、中小企業の生産性アップを実現します。</li>
+        <li><strong>「市民の幸せ」を客観的に評価</strong>  
+          財政や建設事業の成果ではなく、暮らしの実感に基づいた政策評価を導入します。</li>
+        <li><strong>岡山県との連携強化</strong>  
+          二重行政をなくし、防災・医療・教育などで県市一体の取り組みを進めます。</li>
+      </ul>
+      <p>これらの変革を担えるのは、神﨑政人さんです。<br>
+      岡山市を「誰でも同じ」から「確実に変わる」市政へと進めていきます。</p>
+    </div>
+
+    <!-- 政策ページ誘導 -->
+    <div class="policy-link">
+      <a href="https://www.kanzaki-okayama.org/" target="_blank">👉 神﨑政人氏の政策を見る</a>
+      <p style="margin-top:0.5rem;font-size:0.85rem;color:#555;">※外部サイトへ移動します。</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>発行主体</strong>：岡山創生フォーラム</p>
+    <p><strong>代表者</strong>：上杉恭平</p>
+    <p><strong>住所</strong>：岡山市北区田町1丁目1-1　チサンマンション岡山3F 309号</p>
+    <p><strong>連絡先</strong>：<a href="mailto:stoparenaokayama@gmail.com">stoparenaokayama@gmail.com</a></p>
+    <p>&copy; 2025 岡山創生フォーラム</p>
+  </footer>
+
+  <!-- ハンバーガーメニュー制御 -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
