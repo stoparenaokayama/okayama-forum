@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>岡山創生フォーラム | テーマページ</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #333;
+      margin: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    /* ===== ヘッダー ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1976d2;
+      color: #fff;
+      padding: 0.8rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background: #1565c0;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 220px;
+    }
+    nav.show { display: flex; }
+    nav a {
+      color: #fff;
+      padding: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { background: #0d47a1; }
+    .menu-btn {
+      cursor: pointer;
+      font-size: 1.8rem;
+      border: none;
+      background: none;
+      color: white;
+    }
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+      }
+      nav a { padding: 0 1rem; }
+      .menu-btn { display: none; }
+    }
+
+    /* ===== Hero（ページごとに見出し変える） ===== */
+    .hero {
+      background: url('images/okayama.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 { font-size: 2.2rem; font-weight: 900; }
+    .hero p { font-size: 1.1rem; margin-top: 0.8rem; }
+
+    /* ===== コンテンツ ===== */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .section h3 {
+      color: #1976d2;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+    }
+
+    /* ===== 政策リンク誘導 ===== */
+    .policy-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .policy-link a {
+      display: inline-block;
+      background: #1976d2;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .policy-link a:hover {
+      background: #0d47a1;
+    }
+
+    /* ===== フッター ===== */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #66aaff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>岡山創生フォーラム</h1>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">私たちについて</a>
+      <a href="greeting.html">代表あいさつ</a>
+      <a href="theme1.html">市民の疑問（1）</a>
+      <a href="theme2.html">市民の疑問（2）</a>
+      <a href="theme3.html">市民の疑問（3）</a>
+      <a href="theme4.html">市民の疑問（4）</a>
+      <a href="rules.html">規約</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>「岡山市、このままでこの先大丈夫？」</h2>
+    <p>市民が抱く疑問を整理し、未来を考えます。</p>
+  </section>
+
+   <main>
+    <!-- 市民の素朴な疑問 -->
+    <div class="section">
+      <h3>岡山市、このままでこの先大丈夫？</h3>
+      <p>少子化や若者流出、高齢化…。<br>
+      市民の多くが「このままの岡山市で未来は大丈夫なの？」という不安を感じています。</p>
+    </div>
+
+    <!-- データで見る現状 -->
+    <div class="section">
+      <h3>数字が示す岡山市の現実</h3>
+      <ul>
+        <li><strong>少子化</strong> ― 出生数は平成25年の6,700人から令和5年には4,800人へ。10年間で-30％。</li>
+        <li><strong>若者流出</strong> ― 20～39歳の転出は平成30年の約1,000人から令和5年には約2,400人へ倍増。</li>
+        <li><strong>超高齢化</strong> ― 65歳以上が40％を超える地域が160か所以上。最高は87％に達する地域も。</li>
+      </ul>
+      <p>これらの数字は、地域の持続可能性そのものが危機にあることを示しています。</p>
+    </div>
+
+    <!-- 市民が感じる課題 -->
+    <div class="section">
+      <h3>市民が抱く課題感</h3>
+      <ul>
+        <li>子育て世帯が安心して暮らせる環境が十分ではない</li>
+        <li>若者が働きたいと思える魅力ある産業や仕事が少ない</li>
+        <li>高齢者が増える中、地域の支え合いが追いつかない</li>
+        <li>税金の使い方が「本当に市民生活を良くすること」につながっていない気がする</li>
+      </ul>
+      <p>こうした声は、SNSや日常の会話の中でも少しずつ広がっています。</p>
+    </div>
+
+    <!-- 構造的な問題 -->
+    <div class="section">
+      <h3>背景にある構造的な問題</h3>
+      <p>多くの自治体が補助金や税の減免で子育て支援や企業誘致を競っていますが、<br>
+      それは「自治体間の奪い合い」に過ぎず、根本的な解決にはなりません。</p>
+      <p>背景には、<strong>格差の拡大と社会的な再生産の低下</strong>があります。<br>
+      「稼ぎは外へ、負担は内へ」という流れを断ち切り、<br>
+      本来あるべき公共政策の役割――再配分と暮らしの安定――を取り戻す必要があります。</p>
+    </div>
+
+    <!-- 神﨑政人さんのビジョン -->
+    <div class="section">
+      <h3>神﨑政人さんのめざすもの</h3>
+      <p>神﨑政人さんは、この構造的な課題を直視し、<br>
+      <strong>「持続可能な岡山市の実現」</strong>を目的に政策を掲げています。</p>
+      <ul>
+        <li><strong>民主的な行政</strong> ― 市民の声をしっかり反映するまちづくり</li>
+        <li><strong>地域内経済循環の発展</strong> ― お金が市内で回り、仕事や暮らしを支える仕組み</li>
+        <li><strong>社会的再生産の向上</strong> ― 子育て・教育・福祉を支える安心の基盤</li>
+        <li><strong>環境保全</strong> ― 次世代に誇れる自然とまちを残す取り組み</li>
+      </ul>
+      <p>岡山市の未来を「持続可能な地域社会」として再生させる――<br>
+      これこそが、市民の不安に応える唯一の道です。</p>
+    </div>
+
+    <!-- 政策ページ誘導 -->
+    <div class="policy-link">
+      <a href="https://www.kanzaki-okayama.org/" target="_blank">👉 神﨑政人氏の政策を見る</a>
+      <p style="margin-top:0.5rem;font-size:0.85rem;color:#555;">※外部サイトへ移動します。</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>発行主体</strong>：岡山創生フォーラム</p>
+    <p><strong>代表者</strong>：上杉恭平</p>
+    <p><strong>住所</strong>：岡山市北区田町1丁目1-1　チサンマンション岡山3F 309号</p>
+    <p><strong>連絡先</strong>：<a href="mailto:stoparenaokayama@gmail.com">stoparenaokayama@gmail.com</a></p>
+    <p>&copy; 2025 岡山創生フォーラム</p>
+  </footer>
+
+  <!-- ハンバーガーメニュー制御 -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
